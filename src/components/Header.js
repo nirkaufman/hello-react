@@ -1,7 +1,8 @@
-import React, {Component} from "react";
+
+
+import React, { Component } from "react";
 
 export class Header extends Component {
-
   state = { todo: '' };
 
   handleChange = ({ target }) => {
@@ -10,13 +11,13 @@ export class Header extends Component {
 
   handleSubmit = ({ keyCode }) => {
     if(keyCode === 13) {
-      console.log(this.state);
+      this.props.addItem({ title: this.state.todo, completed: false });
     }
   };
 
   render() {
     return <header className="header">
-      <h1>todos</h1>
+      <h1>{this.props.title}</h1>
       <input className="new-todo"
              value={this.state.todo}
              onChange={this.handleChange}
