@@ -16,7 +16,7 @@ export class Header extends Component {
 
   render() {
     return <header className="header">
-      <h1>{this.props.title}</h1>
+      <h1>todos</h1>
       <input className="new-todo"
              value={this.state.todo}
              onChange={this.handleChange}
